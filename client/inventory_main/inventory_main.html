@@ -1,0 +1,28 @@
+<template name="main">
+  <h1>Inventory Management System</h1>
+  <hr />
+  {{> navigation}}
+  <hr />
+  {{> yield}}
+  <hr />
+  <p>Copyright &copy; IMS, 2016-2017.</p>
+</template>
+
+
+<template name="inventory">
+  <h2> Modify your inventory: </h2>
+  {{> selectDepartment}}
+  {{#if Department}}
+  {{> addItem }}
+  {{> invView}}
+  {{/if}}
+</template>
+
+
+<template name="createNew">
+  <select id="createNew">
+    <option value="">Select What to create ...</option>
+    <option value="/addDepartment">Departments</option>
+    <option value="/inventory">Inventory Items</option>
+  </select>
+</template>

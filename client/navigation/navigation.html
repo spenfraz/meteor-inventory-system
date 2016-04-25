@@ -1,0 +1,37 @@
+<template name="navigation">
+    <a href="{{pathFor route='home'}}">Home</a>
+    {{ #if currentUser }}
+      <a href="#" class="logout">Logout</a>
+    {{ else }}
+      <a href="{{pathFor route='register'}}">Register</a>
+      <a href="{{pathFor route='login'}}">Login</a>
+    {{/if}}
+</template>
+
+<template name="home">
+ Welcome! Register or Login to get started.
+  {{ #if currentUser }}
+    <p>Let's get started.</p>
+    {{> createNew}}
+  {{/if}}
+</template>
+
+
+<template name="register">
+  <h1>Register</h1>
+  <form class="register">
+    <p>Email: <input type="email" name="email" required></p>
+    <p>Password: <input type="password" name="password" required></p>
+    <p><input type="submit" value="Register"></p>
+  </form>
+</template>
+
+
+<template name="login">
+  <h1>Login</h1>
+  <form class="login">
+    <p>Email: <input type="email" name="email" required></p>
+    <p>Password: <input type="password" name="password" required></p>
+    <p><input type="submit" value="Login"></p>
+  </form>
+</template>

@@ -1,0 +1,29 @@
+<template name="depView">
+  <h2>Current departments:</h2>
+  {{#each depItem}}
+   <center><a href="#" class="dep" value="{{name}}">{{name}}</a>[<a href="#" class="delete-item" value="{{name}}">Delete</a>]</center>
+
+  {{/each }}
+</template>
+
+
+<template name="addDepartment">
+  <form id=add-department>
+       <p><h2>Create new department:</h2></p>
+       Name:
+       <input type="text" placeholder="Type department name..." name="depName" required>
+       <br />
+       <input type="submit" value="Add Department">
+  </form>
+  <br />
+  {{> depView}}
+</template>
+
+<template name="selectDepartment">
+  <select id="invDepartment">
+      <option value="">Switch Department...</option>
+      {{#each depItem}}
+      <option value="{{name}}"> {{name}}</option>
+      {{/each}}
+  </select>
+</template>

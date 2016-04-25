@@ -1,0 +1,38 @@
+<template name="addItem">
+  <form id=add-item>
+       <p><h2>Create new {{Department}} inventory item:</h2></p>
+       Name:
+       <input type="text" placeholder="Type item name here..." name="itemName" required>
+       <br />
+       Quantity:
+       <input type="text" placeholder="Type quantity here..." name="itemCount">
+       <br />
+       Cost:
+       <input type="text" placeholder="Type cost here..." name="itemCost">
+       <br />
+       <input type="submit" value="Add Item">
+  </form>
+
+</template>
+
+
+<template name="inventoryItem">
+<!--  {{name}}:::{{cost}}:::{{quantity}}::::{{_id}}
+   <br />    -->
+  <input type="text" value="{{name}}" id="itemName">
+  <input type="text" value="{{cost}}" id="itemCost">
+  <input type="text" value="{{quantity}}" id="itemCount">
+  [<a href="#" id="delete-item">Delete</a>]
+  <br />
+</template>
+
+
+<template name="invView">
+  <p><h2>View {{Department}} Inventory:</h2></p>
+  <b>Name------------------------Cost-------------------------Quantity</b>
+
+  <br />
+  {{ #each invItem }}
+    {{> inventoryItem }}
+  {{ /each }}
+</template>

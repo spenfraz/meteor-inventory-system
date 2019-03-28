@@ -1,4 +1,5 @@
 # meteor-inventory-system
+dev. environment ==> https://github.com/spenfraz/vagrant-dev-envs/tree/shell_scripts
 
 Description:  User account system for managing user created Inventory Items ( fields: item name, cost, quantity ) grouped by custom Departments ( field: name ).
 
